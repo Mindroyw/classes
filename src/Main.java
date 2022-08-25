@@ -15,7 +15,7 @@ public class Main {
 
         codeSeparator();
 
-        Book book1 = new Book("Радуга Шесть","Том Клэнси", 2011);
+        Book book1 = new Book("Радуга шесть","Том Клэнси", 2011);
         System.out.println("Название книги: " + book1.getBookName());
         System.out.println("Автор книги: " + book1.getAuthor());
         book1.setYearOfPublication(2016);
