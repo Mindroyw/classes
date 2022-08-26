@@ -1,5 +1,5 @@
 public class Main {
-    public static String codeSeparator(){
+    public static String codeSeparator() {
         System.out.println("---------------------------");
         return null;
     }
@@ -8,21 +8,21 @@ public class Main {
 
         codeSeparator();
 
-        Book book = new Book("Голдфингер", "Иан Флемминг", 2017);
-        System.out.println("Название книги: " + book.getBookName());
-        System.out.println("Автор книги: " + book.getAuthor());
-        System.out.println("Год публикации: " + book.getYearOfPublication());
+        Book goldfinger = new Book("Голдфингер",
+                Author.createAuthor("Иан", "Флемминг"), 2017);
+        System.out.println("Название книги: " + goldfinger.bookName + "; ");
+        System.out.println("Автор книги: " + Author.createAuthor("Иан", "Флемминг"));
+        System.out.println("Год публикации: " + goldfinger.yearOfPublication);
 
         codeSeparator();
 
-        Book book1 = new Book("Радуга шесть","Том Клэнси", 2011);
-        System.out.println("Название книги: " + book1.getBookName());
-        System.out.println("Автор книги: " + book1.getAuthor());
-        book1.setYearOfPublication(2016);
-        System.out.println("Год публикации: " + book1.getYearOfPublication());
+        Book rainbowSix = new Book("Радуга Шесть",
+                Author.createAuthor("Том", "Клэнси"), 2011);
+        System.out.println("Название книги: " + rainbowSix.bookName);
+        System.out.println("Автор книги: " + rainbowSix.author);
+        rainbowSix.setYearOfPublication(2015);
+        System.out.println("Год публикации: " + rainbowSix.yearOfPublication);
 
         codeSeparator();
-
     }
-
 }
