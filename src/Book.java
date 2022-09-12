@@ -1,29 +1,36 @@
 public class Book {
-    String bookName;
-    Author author;
-    int yearOfPublication;
+    private final String title;
+    private final Author authorFullName;
+    private int yearOfPublication;
 
-    public  Book(String bookName, Author author, int yearOfPublication) {
+    public Book(String title, Author authorFullName, int yearOfPublication) {
+        this.title = title;
+        this.authorFullName = authorFullName;
+        this.yearOfPublication = yearOfPublication;
+    }
 
-            this.bookName = bookName;
-            this.author = author;
+    public String getTitle() {
+        return title;
+    }
+
+    public Author getAuthorFullName() {
+        return authorFullName;
+    }
+
+    public int getYearOfPublication() {
+        return yearOfPublication;
+    }
+
+    public void setYearOfPublication(int yearOfPublication) {
+        if (yearOfPublication >= 0) {
             this.yearOfPublication = yearOfPublication;
+        } else {
+            System.out.println("Неверные данные!");
         }
-        Author authorFlemming = Author.createAuthor("Иан" ,"Флемминг");
-        Author authorClancy = Author.createAuthor("Том", "Клэнси");
+    }
 
-        public String getBookName(){
-            return this.bookName;
-        }
-        public Author getAuthor(){
-            return  this.author;
-
-        }
-        public int getYearOfPublication(){
-                return this.yearOfPublication;
-        }
-        public void setYearOfPublication(int yearOfPublication) {
-            this.yearOfPublication = yearOfPublication;
-        }
-
-        }
+    public void bookInfo(){
+        System.out.printf("Название: %s\nАвтор: %s\nГод публикации: %s\n", title, authorFullName.getAuthorFullName(), yearOfPublication);
+        System.out.println("========================");
+    }
+}

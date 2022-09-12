@@ -1,28 +1,23 @@
+
 public class Main {
-    public static String codeSeparator() {
-        System.out.println("---------------------------");
-        return null;
-    }
 
     public static void main(String[] args) {
 
-        codeSeparator();
+        Author firstAuthor = new Author("Иан Флемминг");
+        Author secondAuthor = new Author("Том Клэнси");
 
-        Book goldfinger = new Book("Голдфингер",
-                Author.createAuthor("Иан", "Флемминг"), 2017);
-        System.out.println("Название книги: " + goldfinger.bookName + "; ");
-        System.out.println("Автор книги: " + Author.createAuthor("Иан", "Флемминг"));
-        System.out.println("Год публикации: " + goldfinger.yearOfPublication);
+        Book book1 = new Book("Голдфингер", new Author("Иан Флемминг"), 1964);
+        Book book2 = new Book("Красный шторм", new Author("Том Клэнси"), 2016);
 
-        codeSeparator();
+        Book book3 = new Book("Доктор Ноу", firstAuthor, 1962);
+        Book book4 = new Book("Радуга шесть", secondAuthor, 2017);
 
-        Book rainbowSix = new Book("Радуга Шесть",
-                Author.createAuthor("Том", "Клэнси"), 2011);
-        System.out.println("Название книги: " + rainbowSix.bookName);
-        System.out.println("Автор книги: " + rainbowSix.author);
-        rainbowSix.setYearOfPublication(2015);
-        System.out.println("Год публикации: " + rainbowSix.yearOfPublication);
+        book1.bookInfo();
+        book2.bookInfo();
+        book3.bookInfo();
+        book4.bookInfo();
 
-        codeSeparator();
+        book2.setYearOfPublication(2019);
+        book2.bookInfo();
     }
 }

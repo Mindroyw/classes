@@ -1,17 +1,13 @@
 public class Author {
 
-    private String firstNameAuthor;
-    private String surnameAuthor;
+        String authorFullName;
 
-    public static Author createAuthor(String firstNameAuthor,String surnameAuthor) {
-        Author author = new Author();
-        author.firstNameAuthor = firstNameAuthor;
-        author.surnameAuthor = surnameAuthor;
-        return author;
-    }
+        public Author(String authorFullName) {
+            this.authorFullName = authorFullName;
+        }
 
-        public String toString(){
-            return "" + this.firstNameAuthor + "" + this.surnameAuthor;
+        public String getAuthorFullName() {
+            return authorFullName;
         }
 
     }
