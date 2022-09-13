@@ -1,13 +1,20 @@
 public class Author {
 
-        String authorFullName;
+        private String authorFirstName;
+        private String authorSecondName;
 
-        public Author(String authorFullName) {
-            this.authorFullName = authorFullName;
+    public Author(String authorFirstName, String authorSecondName) {
+        this.authorFirstName = authorFirstName;
+        this.authorSecondName = authorSecondName;
+    }
+        public String getAuthorFirstName() {
+            return authorFirstName;
         }
-
-        public String getAuthorFullName() {
-            return authorFullName;
-        }
+        public String getAuthorSecondName() {
+            return authorSecondName;
+    }
+    public String getAuthorFullName() {
+        return authorFirstName + " " + authorSecondName;
+    }
 
     }
