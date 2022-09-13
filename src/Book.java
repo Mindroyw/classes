@@ -1,3 +1,4 @@
+import java.util.Objects;
 public class Book {
     private final String title;
     private final Author authorFullName;
@@ -33,4 +34,35 @@ public class Book {
         System.out.printf("Название: %s\nАвтор: %s\nГод публикации: %s\n", title, authorFullName.getAuthorFullName(), yearOfPublication);
         System.out.println("========================");
     }
+    public String toString() {
+        return "Book{" +
+                "title='" + title + '\'' +
+                ", author=" + authorFullName +
+                ", yearOfPublication=" + yearOfPublication +
+                '}';
+    }
+
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Book book = (Book) o;
+        return Objects.equals(title, book.title);
+    }
+
+    public int hashCode() {
+        return Objects.hash(title);
+    }
 }
+
+/**
+ ───▐▀▄──────▄▀▌───▄▄▄▄▄▄▄
+ ───▌▒▒▀▄▄▄▄▀▒▒▐▄▀▀▒██▒██▒▀▀▄
+ ──▐▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▀▄
+ ──▌▒▒▒▒▒▒▒▒▒▒▒▒▒▄▒▒▒▒▒▒▒▒▒▒▒▒▒▀▄
+ ▀█▒▒█▌▒▒█▒▒▐█▒▒▀▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▌
+ ▀▌▒▒▒▒▒▀▒▀▒▒▒▒▒▀▀▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▐ ▄▄
+ ▐▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▄█▒█
+ ▐▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒█▀
+ ──▐▄▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▄▌
+ ────▀▄▄▀▀▀▀▄▄▀▀▀▀▀▀▄▄▀▀▀▀▀▀▄▄
+ */

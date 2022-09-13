@@ -19,5 +19,10 @@ public class Main {
 
         book2.setYearOfPublication(2019);
         book2.bookInfo();
+
+        System.out.println(book1);
+        System.out.println(book1.equals(book2));
+        System.out.println(book2.equals(book3));
+        System.out.println(book2.hashCode() == book3.hashCode());
     }
 }
